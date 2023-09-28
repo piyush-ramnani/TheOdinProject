@@ -1,3 +1,7 @@
+/* 
+A program that reads your book information from the CLI and logs the information in the console.
+*/
+
 const readline = require("readline");
 
 const rl = readline.createInterface({
@@ -5,6 +9,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+//PROMTS
 rl.question("Title: ", function (userInputA) {
   rl.question("Author: ", function (userInputB) {
     rl.question("Pages: ", function (userInputC) {
@@ -18,8 +23,8 @@ rl.question("Title: ", function (userInputA) {
         isAuthor = userInputB;
         isTitle = userInputA;
 
-        const myBook = new book(isTitle, isAuthor, isPages, isRead);
-        myBook.info();
+        const myBook = new book(isTitle, isAuthor, isPages, isRead); //Creating an object of the book function
+        myBook.info(); //accessing a property
 
         rl.close();
       });
@@ -27,6 +32,7 @@ rl.question("Title: ", function (userInputA) {
   });
 });
 
+//BookInfo and display function
 function book(title, author, pages, read) {
   this.title = title;
   this.author = author;
